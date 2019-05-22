@@ -1,0 +1,13 @@
+version: '3.2'
+services:
+  chrome:
+    # Version of puppeteer should match the one used by storyshots
+    image: buildkite/puppeteer:v1.15.0
+    ports:
+      - '19222:19222'
+    command: >
+      node -e "require('puppeteer').launch({args:[
+        '--no-sandbox',
+        '--remote-debugging-port=19222',
+        '--remote-debugging-address=0.0.0.0'
+      ]})"
