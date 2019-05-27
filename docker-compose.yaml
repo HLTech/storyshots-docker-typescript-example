@@ -5,6 +5,8 @@ services:
     image: buildkite/puppeteer:v1.15.0
     ports:
       - '19222:19222'
+    volumes:
+      - ./dist:/storybook_build
     command: >
       node -e "require('puppeteer').launch({args:[
         '--no-sandbox',
