@@ -7,8 +7,7 @@ services:
   - docker
 
 script:
-  - npm run build
-  - npm run test
+  - npm run test-ci
 
 after_script:
   - docker-compose down

@@ -5,9 +5,9 @@
   "license": "MIT",
   "scripts": {
     "start": "start-storybook -p 9001",
-    "build": "build-storybook -o dist",
     "pretest": "docker-compose up -d",
-    "test": "jest --preset=ts-jest --forceExit"
+    "test": "jest --preset=ts-jest --forceExit",
+    "test-ci": "start-server-and-test http://localhost:9001"
   },
   "dependencies": {
     "@babel/core": "^7.4.4",
@@ -27,6 +27,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-test-renderer": "^16.8.6",
+    "start-server-and-test": "^1.9.1",
     "ts-jest": "^24.0.2",
     "typescript": "^3.4.5"
   }

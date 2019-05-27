@@ -4,24 +4,15 @@ import {imageSnapshot} from '@storybook/addon-storyshots-puppeteer';
 import {connect} from "puppeteer";
 
 /**
- * Detect if running locally on or CI
- */
-const IS_CI = Boolean(process.env.CI);
-
-/**
- * URL to Chromium instance running inside docker container
+ * URL to Chromium instance running inside Docker container
  */
 const CHROMIUM_URL = 'http://127.0.0.1:19222';
 
 /**
- * URL to local instance of Storybook, accessible from inside docker container
+ * URL to Storybook, accessible from inside docker container
+ * (host.docker.internal resolves to the internal IP address used by the host)
  */
 const STORYBOOK_DEV_URL = 'http://host.docker.internal:9001';
-
-/**
- * URL to static build of Storybook, accessible from inside docker container
- */
-const STORYBOOK_BUILD_URL = "file:///storybook_build/";
 
 /**
  * Function returning config object that will be passed to jest-image-snapshot
@@ -47,7 +38,7 @@ initStoryshots({
         }, module)
     },
     test: imageSnapshot({
-        storybookUrl: IS_CI ? STORYBOOK_BUILD_URL : STORYBOOK_DEV_URL,
+        storybookUrl: STORYBOOK_DEV_URL,
         getCustomBrowser: () => connect({browserURL: CHROMIUM_URL}),
         getMatchOptions
     }),
