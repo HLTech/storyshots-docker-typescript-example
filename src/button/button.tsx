@@ -2,7 +2,7 @@ import * as React from 'react';
 
 const buttonStyle = {
     border: '1px solid rgb(225, 225, 225)',
-    borderRadius: '3px',
+    borderRadius: '5px',
     backgroundColor: 'rgb(238, 238, 238)',
     cursor: 'pointer',
     fontSize: '15px',
