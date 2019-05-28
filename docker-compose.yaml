@@ -11,3 +11,7 @@ services:
         '--remote-debugging-port=19222',
         '--remote-debugging-address=0.0.0.0'
       ]})"
+    depends_on: [ dockerhost ]
+  dockerhost:
+    image: qoomon/docker-host
+    cap_add: [ 'NET_ADMIN', 'NET_RAW' ]

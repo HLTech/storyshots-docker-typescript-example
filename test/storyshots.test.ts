@@ -9,10 +9,10 @@ import {connect} from "puppeteer";
 const CHROMIUM_URL = 'http://127.0.0.1:19222';
 
 /**
- * URL to Storybook, accessible from inside docker container
- * (host.docker.internal resolves to the internal IP address used by the host)
+ * URL to Storybook, accessible from inside Docker container
+ * dockerhost resolves to the IP address of our machine
  */
-const STORYBOOK_DEV_URL = 'http://host.docker.internal:9001';
+const STORYBOOK_DEV_URL = 'http://dockerhost:9001';
 
 /**
  * Function returning config object that will be passed to jest-image-snapshot
