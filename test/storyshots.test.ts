@@ -12,7 +12,7 @@ const CHROMIUM_URL = 'http://127.0.0.1:19222';
  * URL to Storybook, accessible from inside Docker container
  * dockerhost resolves to the IP address of our machine
  */
-const STORYBOOK_DEV_URL = 'http://dockerhost:9001';
+const STORYBOOK_URL = 'http://dockerhost:9001';
 
 /**
  * Function returning config object that will be passed to jest-image-snapshot
@@ -38,7 +38,7 @@ initStoryshots({
         }, module)
     },
     test: imageSnapshot({
-        storybookUrl: STORYBOOK_DEV_URL,
+        storybookUrl: STORYBOOK_URL,
         getCustomBrowser: () => connect({browserURL: CHROMIUM_URL}),
         getMatchOptions
     }),

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "start-storybook -p 9001",
     "pretest": "docker-compose up -d",
-    "test": "jest --preset=ts-jest --forceExit",
+    "test": "jest --forceExit",
     "test-ci": "start-server-and-test http://localhost:9001"
   },
   "dependencies": {
